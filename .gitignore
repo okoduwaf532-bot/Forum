@@ -13,6 +13,7 @@
 /.zed
 /auth.json
 /laravel-forum/
+/vanta/
 /node_modules
 /public/build
 /public/hot
