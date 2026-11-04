@@ -1,10 +1,10 @@
 <x-app-layout>
-    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div class="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+    <div class="mx-auto max-w-7xl px-4 py-7 sm:px-6 sm:py-10 lg:px-8">
+        <div class="mb-8 flex flex-col justify-between gap-5 md:mb-10 md:flex-row md:items-end">
             <div>
                 <p class="mb-2 text-sm font-bold uppercase tracking-widest text-blue-600">Community forum</p>
-                <h1 class="text-4xl font-black tracking-tight text-slate-950">Learn, share, build together.</h1>
-                <p class="mt-3 max-w-2xl text-slate-500">A friendly place for developers to ask questions, exchange ideas, and solve problems together.</p>
+                <h1 class="text-3xl font-black tracking-tight text-white drop-shadow-[0_2px_4px_rgba(15,23,42,0.55)] sm:text-4xl">Learn, share, build together.</h1>
+                <p class="mt-3 max-w-2xl text-white drop-shadow-[0_2px_4px_rgba(15,23,42,0.55)]">A friendly place for developers to ask questions, exchange ideas, and solve problems together.</p>
             </div>
             @auth
                 @if (auth()->user()->isAdmin())
@@ -16,12 +16,12 @@
         <div class="grid gap-8 lg:grid-cols-[1fr_280px]">
             <section>
                 <div class="mb-4 flex items-center justify-between">
-                    <h2 class="text-lg font-bold text-slate-900">Discussion spaces</h2>
-                    <span class="text-sm text-slate-500">{{ $threads->count() }} {{ Str::plural('space', $threads->count()) }}</span>
+                    <h2 class="text-lg font-bold text-white drop-shadow-[0_2px_4px_rgba(15,23,42,0.55)]">Discussion spaces</h2>
+                    <span class="text-sm font-semibold text-white/90 drop-shadow-[0_1px_3px_rgba(15,23,42,0.5)]">{{ $threads->count() }} {{ Str::plural('space', $threads->count()) }}</span>
                 </div>
                 <div class="space-y-4">
                     @forelse ($threads as $thread)
-                        <a href="{{ route('thread.show', $thread) }}" class="forum-card group block p-6 transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md">
+                        <a href="{{ route('thread.show', $thread) }}" class="forum-card group block p-4 transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md sm:p-6">
                             <div class="flex items-start gap-4">
                                 <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-xl text-blue-600">#</span>
                                 <div class="min-w-0 flex-1">

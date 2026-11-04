@@ -27,7 +27,7 @@
 			</div>
 
 			<p class="text-sm text-gray-500 mb-6">Registered: {{ $user->created_at?->format('d-m-Y H:i') }}</p>
-			<button type="submit" class="bg-black text-white px-4 py-2 rounded">Save changes</button>
+			<button type="submit" class="forum-button">Save changes</button>
 			<a href="{{ route('users.index') }}" class="ml-4 text-gray-600 hover:underline">Cancel</a>
 		</form>
 	</div>

@@ -17,13 +17,13 @@
                     <textarea name="body" rows="4" placeholder="Add some context..." class="forum-input" required>{{ old('body') }}</textarea>
                     @error('title') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
                     @error('body') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
-                    <div><button type="submit" class="forum-button">Publish topic</button></div>
+                    <div><button type="submit" class="forum-button publish-topic-button">Publish topic</button></div>
                 </form>
             </div>
         @endauth
 
         <div class="mb-4 flex items-center justify-between">
-            <h2 class="text-xl font-bold text-slate-900">Latest discussions</h2>
+            <h2 class="text-xl font-bold text-white drop-shadow-[0_2px_4px_rgba(15,23,42,0.55)]">Latest discussions</h2>
             <span class="text-sm text-slate-500">{{ $topics->count() }} {{ Str::plural('topic', $topics->count()) }}</span>
         </div>
         <div class="space-y-3">

@@ -21,12 +21,12 @@
             @endif
             <div>
                 <a href="/" class="relative z-10 flex items-center gap-2 text-xl font-bold text-slate-900">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-lg font-black text-white">F</span>
+                    <span class="forum-logo forum-logo-lg" aria-hidden="true"><span>F</span></span>
                     <span>Forum <span class="text-blue-600">Gang</span></span>
                 </a>
             </div>
 
-            <div class="relative z-10 w-full sm:max-w-md mt-6 px-6 py-7 bg-white/95 backdrop-blur-md shadow-xl overflow-hidden rounded-2xl">
+            <div class="guest-glass-card relative z-10 w-full sm:max-w-md mt-6 px-6 py-7 overflow-hidden rounded-2xl">
                 {{ $slot }}
             </div>
         </div>

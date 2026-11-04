@@ -20,7 +20,7 @@
 
         <section class="mt-10">
             <div class="mb-4 flex items-center justify-between">
-                <h2 class="text-xl font-bold text-slate-900">Replies</h2>
+                <h2 class="text-xl font-bold text-white drop-shadow-[0_2px_4px_rgba(15,23,42,0.55)]">Replies</h2>
                 <span class="text-sm text-slate-500">{{ $topic->replies->count() }} {{ Str::plural('reply', $topic->replies->count()) }}</span>
             </div>
             @forelse ($topic->replies as $reply)
@@ -48,7 +48,7 @@
                     @csrf
                     <textarea name="body" rows="5" class="forum-input mt-4" placeholder="Share your thoughts..." required>{{ old('body') }}</textarea>
                     @error('body') <p class="text-red-600 text-sm mt-2">{{ $message }}</p> @enderror
-                    <button type="submit" class="forum-button mt-4">Post reply</button>
+                    <button type="submit" class="forum-button post-reply-button mt-4">Post reply</button>
                 </form>
             </section>
         @endauth
