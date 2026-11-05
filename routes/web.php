@@ -76,6 +76,9 @@ Route::middleware(['auth', App\Http\Middleware\AdminMiddleware::class])->group(f
     Route::put('/users/{user}', [UserController::class, 'update'])
         ->name('users.update');
 
+    Route::put('/users/{user}/password', [UserController::class, 'updatePassword'])
+        ->name('users.password.update');
+
     Route::delete('/users/{user}', [UserController::class, 'destroy'])
         ->name('users.destroy');
 });

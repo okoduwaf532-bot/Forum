@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
@@ -33,6 +34,22 @@ class UserController extends Controller
         return redirect()
             ->route('users.index')
             ->with('success', 'User updated successfully.');
+    }
+
+    public function updatePassword(Request $request, User $user)
+    {
+        $validated = $request->validate([
+            'password' => ['required', 'confirmed', Password::defaults()],
+        ]);
+
+        $user->update([
+            'password' => Hash::make($validated['password']),
+            'password_change_required' => true,
+        ]);
+
+        return redirect()
+            ->route('users.edit', $user)
+            ->with('success', 'Temporary password set. Share it securely with the user and ask them to change it.');
     }
 
     public function destroy(User $user)

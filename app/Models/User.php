@@ -26,6 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'password_change_required',
     ];
 
     /**
@@ -48,6 +49,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'password_change_required' => 'boolean',
         ];
     }
 
@@ -71,4 +73,3 @@ class User extends Authenticatable
         return $this->role === 'admin';
     }
 }
-
