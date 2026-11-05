@@ -15,9 +15,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="font-sans antialiased" @if (request()->routeIs('users.*')) data-vanta-effect="halo" @elseif (request()->routeIs('dashboard', 'home', 'threads.*', 'thread.*', 'topic.*')) data-vanta-effect="birds" @endif>
+    <body class="font-sans antialiased" @if (request()->routeIs('profile.edit')) data-vanta-effect="waves" @elseif (request()->routeIs('users.*')) data-vanta-effect="halo" @elseif (request()->routeIs('dashboard', 'home', 'threads.*', 'thread.*', 'topic.*')) data-vanta-effect="birds" @endif>
         <div class="vanta-page min-h-screen">
-            @if (request()->routeIs('users.*'))
+            @if (request()->routeIs('profile.edit'))
+                <div id="vanta-background" class="vanta-background" aria-hidden="true"></div>
+            @elseif (request()->routeIs('users.*'))
                 <div id="vanta-background" class="vanta-background" aria-hidden="true"></div>
             @elseif (request()->routeIs('dashboard', 'home', 'threads.*', 'thread.*', 'topic.*'))
                 <div id="vanta-background" class="vanta-background" aria-hidden="true"></div>
